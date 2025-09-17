@@ -29,7 +29,7 @@ def organizar_por_categoria(diretorio):
     for cat, lista in categorias.items()
     for ext in lista
     }
-    limpar_tela()
+    
     for item_nome in os.listdir(diretorio):
         caminho_original = os.path.join(diretorio, item_nome)
         if os.path.isfile(caminho_original):
@@ -70,7 +70,7 @@ def organizar_por_data(diretorio):
                 os.makedirs(pasta_destino_caminho)
             shutil.move(caminho_original, os.path.join(pasta_destino_caminho, item_nome))
     print("Organização por data concluída!")
-    time.sleep(1)
+    time.sleep(1.5)
 
 # --- MENU PRINCIPAL ---
 while True:
@@ -95,6 +95,7 @@ while True:
             time.sleep(1.5)
             continue
         
+        limpar_tela()
         # Chama a função correta baseada na escolha do usuário
         if escolha == '1':
             organizar_por_categoria(diretorio_alvo)
