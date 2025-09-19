@@ -88,7 +88,7 @@ while True:
         break
     
     if escolha in ['1', '2', '3']:
-        diretorio_alvo = input("Digite o caminho da pasta para organizar: ")
+        diretorio_alvo = input("Digite o caminho da pasta para organizar ou arraste a pasta aqui: ").strip('"')
 
         if not os.path.isdir(diretorio_alvo):
             print(f"ERRO: O caminho '{diretorio_alvo}' não é um diretório válido.")
